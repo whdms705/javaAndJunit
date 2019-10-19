@@ -14,13 +14,6 @@ import static test.ch07.scratch.ConstrainsSidesTo.constrainsSidesTo;
 public class RectangleTest {
     private Rectangle rectangle;
 
-
-    @After
-    public void ensureInvariant() {
-        System.out.println(constrainsSidesTo(100));
-        assertThat(rectangle, constrainsSidesTo(100));
-    }
-
     @Test
     public void answersArea() {
         rectangle = new Rectangle(new Point(5, 5), new Point (15, 10));
@@ -34,5 +27,11 @@ public class RectangleTest {
         rectangle = new Rectangle(new Point(5, 5));
         rectangle.setOppositeCorner(new Point(130, 130));
         assertThat(rectangle.area(), equalTo(15625));
+    }
+
+    @After
+    public void ensureInvariant() {
+        System.out.println(constrainsSidesTo(100));
+        assertThat(rectangle, constrainsSidesTo(100));
     }
 }

@@ -1,13 +1,15 @@
 package test.ch07;
 
 import main.ch07.*;
-
-import static org.junit.Assert.*;
-import java.util.*;
-
 import main.ch2.Bool;
-import org.junit.*;
-import static org.hamcrest.CoreMatchers.*;
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
+
+import java.util.List;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.junit.Assert.assertThat;
 
 // CORECT : Ordering(순서)
 
@@ -22,7 +24,7 @@ public class ProfilePoolTest {
         pool = new ProfilePool();
         langrsoft = new Profile("Langrsoft");
         smeltInc = new Profile("Smelt Inc.");
-        doTheyReimburseTuition = new BooleanQuestion(1, "Reimburses tuition?");
+        doTheyReimburseTuition = new BooleanQuestion(1, "Reimburses tuition?"); // 수업료를 상환합니까?
     }
 
     @Test

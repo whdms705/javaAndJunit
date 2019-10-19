@@ -24,7 +24,7 @@ public class ProfilePool {
 
    public List<Profile> ranked() {
       Collections.sort(profiles, 
-            (p1, p2) -> -1 * ((Integer)p1.score()).compareTo(p2.score()));
+            (p1, p2) -> ((Integer)p1.score()).compareTo(p2.score()));
       return profiles;
    }
 }
